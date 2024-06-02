@@ -1,4 +1,4 @@
-import { AppBar, Toolbar, Typography, Box, IconButton, Tooltip } from '@mui/material';
+import { AppBar, Toolbar, Typography, Box, IconButton, Tooltip, Backdrop } from '@mui/material';
 import { Menu as MenuIcon, Search as SearchIcon, Add as AddIcon, Group as GroupIcon, Logout as LogoutIcon,Notifications as NotificationsIcon } from '@mui/icons-material';
 import React, { Suspense, lazy } from 'react';
 import { useNavigate} from "react-router-dom";
@@ -78,21 +78,21 @@ const Header = () => {
     </Box>
     {
     isSearch && (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<Backdrop/>}>
      <SearchDialog />
      </Suspense>
     )
   }
   {
     isNotification && (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<Backdrop/>}>
      <NotificationDialog />
      </Suspense>
     )
   }
   {
     isNewGroup && (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<Backdrop/>}>
      <NewGroupDialog />
      </Suspense>
     )
