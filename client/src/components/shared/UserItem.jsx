@@ -2,12 +2,13 @@ import React, { memo } from 'react';
 import { Avatar, IconButton, ListItem, Stack, Typography } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
-const UserItem = ({ user, handler, handlerIsLoading,isAdded=false}) => {
+const UserItem = ({ user, handler, handlerIsLoading,isAdded=false,styling}) => {
     const { name, _id, avatar } = user;
 
     return (
         <ListItem >
-            <Stack direction="row" alignItems="center" spacing={"1rem"} width={"100%"} >
+            <Stack direction="row" alignItems="center" spacing={"1rem"} width={"100%"} 
+            sx={{...styling}}>
                 <Avatar src={avatar} alt={name} />
                 <Typography 
                     variant="body1"
@@ -19,6 +20,7 @@ const UserItem = ({ user, handler, handlerIsLoading,isAdded=false}) => {
                         WebkitLineClamp: 1,
                         WebkitBoxOrient: "vertical",
                         width: "100%",
+                        
                     }}
                 >
                     {name}
