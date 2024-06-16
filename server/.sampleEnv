@@ -1,0 +1,16 @@
+
+
+MONGO_URI = mongodb://localhost:27017
+
+JWT_SECRET=djgjkdshbgjkhfnjksdfhbnsjkdfsdhjfk
+
+ADMIN_SECRET_KEY= diwakar02
+
+NODE_ENV = DEVELOPMENT
+
+CLIENT_URL = frontend url
+
+
+CLOUDINARY_CLOUD_NAME= dcpd5m02i
+CLOUDINARY_API_KEY = 454233472634566
+CLOUDINARY_API_SECRET = w8zhb1pgjKO4F520iWsKh97mL0w

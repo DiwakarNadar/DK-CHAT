@@ -1,24 +1,31 @@
-import React from 'react'
-import { transformImageUrl } from '../../lib/features'
-import { FileOpen } from "@mui/icons-material";
-const RenderAttachment = (file,url) => {
-  switch (file) {
-    case "image":
-      return <img 
-      src={transformImageUrl(url)} 
-      alt='attachment'
-      width={"200px"}
-      height={"200px"}
-      style={{
-        objectFit:"contain"
-      }}/>
-    case "audio":
-      return <audio src={url} controls preload='none' />
-    case "video":
-      return <video src={url} controls preload='none' width={"200px"} />
-    default:
-        return <FileOpen />
-  }
-}
+import React from "react";
+import { transformImage } from "../../lib/features";
+import { FileOpen as FileOpenIcon } from "@mui/icons-material";
 
-export default RenderAttachment
+const RenderAttachment = (file, url) => {
+  switch (file) {
+    case "video":
+      return <video src={url} preload="none" width={"200px"} controls />;
+
+    case "image":
+      return (
+        <img
+          src={transformImage(url, 200)}
+          alt="Attachement"
+          width={"200px"}
+          height={"150px"}
+          style={{
+            objectFit: "contain",
+          }}
+        />
+      );
+
+    case "audio":
+      return <audio src={url} preload="none" controls />;
+
+    default:
+      return <FileOpenIcon />;
+  }
+};
+
+export default RenderAttachment;
